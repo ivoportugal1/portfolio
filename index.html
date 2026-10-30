@@ -157,6 +157,14 @@ header{position:fixed;inset:0 0 auto 0;z-index:100;background:color-mix(in srgb,
 .status-row span{padding:3px 9px;border-radius:999px;border:1px solid var(--border);background:var(--surface);color:var(--muted)}
 .fake-seal{position:absolute;top:12px;left:12px;right:12px}
 
+
+/* Barras horizontais (mini dashboard) */
+.hbars{display:grid;gap:9px}
+.hb{display:grid;grid-template-columns:78px 1fr 34px;gap:8px;align-items:center;font-size:.76rem;color:var(--muted)}
+.hb-t{height:9px;border-radius:99px;background:var(--surface-2);overflow:hidden}
+.hb-t div{height:100%;border-radius:99px;background:var(--accent)}
+.hb b{color:var(--text);font-family:var(--font-head);text-align:right}
+
 /* PRODUCTS */
 .prod-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
 .prod{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:24px;display:flex;flex-direction:column;gap:12px;transition:.25s}
@@ -323,8 +331,8 @@ footer{padding:28px 0 40px;color:var(--muted);font-size:.85rem;text-align:center
 <section class="stats" aria-label="Números rápidos">
   <div class="container stat-grid">
     <div class="stat reveal"><div class="val"><span data-count="3">3</span>º</div><div class="lbl">semestre de Ciência da Computação</div></div>
-    <!-- TROCAR: atualize o número conforme você publicar mais projetos de dados (hoje: 2) -->
-    <div class="stat reveal"><div class="val"><span data-count="2">2</span></div><div class="lbl">projetos de dados</div></div>
+    <!-- TROCAR: atualize o número conforme você publicar mais projetos de dados (hoje: 3, sendo 2 de estudo com dados fictícios) -->
+    <div class="stat reveal"><div class="val"><span data-count="3">3</span></div><div class="lbl">projetos de dados</div></div>
     <div class="stat reveal"><div class="val" style="font-size:clamp(1.1rem,2.2vw,1.5rem)">Power BI, SQL, Python</div><div class="lbl">stack de dados</div></div>
     <div class="stat reveal"><div class="val" style="font-size:clamp(1.1rem,2.2vw,1.5rem)">Disponível</div><div class="lbl">para estágio</div></div>
   </div>
@@ -356,31 +364,40 @@ footer{padding:28px 0 40px;color:var(--muted);font-size:.85rem;text-align:center
 
     <div class="projects">
 
-      <!-- a) MARKETING -->
+      <!-- a) MARKETING (projeto de estudo, DADOS FICTÍCIOS). TROCAR pelos dados e print reais quando quiser -->
       <article class="project reveal">
         <div class="p-media">
-          <!-- TROCAR: coloque o print do dashboard em assets/marketing-powerbi.png e remova o bloco do placeholder -->
-          <!-- <img src="assets/marketing-powerbi.png" alt="Dashboard de marketing no Power BI" loading="lazy"> -->
-          <div class="shot-ph" style="text-align:center;color:var(--muted);border:1px dashed var(--border);border-radius:12px;padding:40px 20px;width:100%">
-            <span class="ph">[PLACEHOLDER]</span><br>Print ou GIF do dashboard de Marketing<br><small>assets/marketing-powerbi.png</small>
+          <div class="fake-seal"><span class="tag warn">Dados fictícios de exemplo</span></div>
+          <div class="mini-dash" style="margin-top:34px" role="img" aria-label="Painel de marketing com KPIs e leads por canal, com dados fictícios">
+            <div class="kpis">
+              <div class="kpi"><small>Investimento</small><b>R$ 42 mil</b></div>
+              <div class="kpi"><small>Leads</small><b class="up">1.380</b></div>
+              <div class="kpi"><small>Custo por lead</small><b>R$ 30,43</b></div>
+            </div>
+            <div class="mini-chart">
+              <div class="hbars">
+                <div class="hb"><span>Instagram</span><div class="hb-t"><div style="width:100%"></div></div><b>520</b></div>
+                <div class="hb"><span>Google Ads</span><div class="hb-t"><div style="width:79%"></div></div><b>410</b></div>
+                <div class="hb"><span>E-mail</span><div class="hb-t"><div style="width:50%"></div></div><b>260</b></div>
+                <div class="hb"><span>Indicação</span><div class="hb-t"><div style="width:37%"></div></div><b>190</b></div>
+              </div>
+              <div class="axis-text" style="margin-top:6px">Leads por canal</div>
+            </div>
+            <div class="status-row"><span>Jan a Jun</span><span>Todos os canais</span><span>Filtro por mês</span></div>
           </div>
         </div>
         <div class="p-body">
-          <div class="p-top"><span class="tag">Power BI</span><span class="tag warn">Preencher</span></div>
+          <div class="p-top"><span class="tag">Power BI</span><span class="tag warn">Projeto de estudo</span></div>
           <h3>Mini projeto de Marketing em Power BI</h3>
-          <p class="question"><strong>Pergunta de negócio:</strong> <span class="ph">[PLACEHOLDER]</span> ex.: quais canais trazem mais retorno e onde vale investir?</p>
+          <p class="question"><strong>Pergunta de negócio:</strong> quais canais trazem mais leads com menor custo, e onde vale redistribuir a verba?</p>
           <div class="tools"><span>Power BI</span><span>DAX</span><span>Power Query</span></div>
           <h4>O que fiz</h4>
           <ul>
-            <li><span class="ph">[PLACEHOLDER]</span> Tratamento e modelagem da base</li>
-            <li><span class="ph">[PLACEHOLDER]</span> KPIs analisados (liste os reais)</li>
-            <li><span class="ph">[PLACEHOLDER]</span> Visuais e navegação do painel</li>
+            <li>Tratei e organizei a base de campanhas no Power Query</li>
+            <li>Criei medidas em DAX para custo por lead, conversão e retorno</li>
+            <li>Montei visuais por canal e por mês, com filtro de período</li>
           </ul>
-          <div class="insight"><strong>Resultado/insight:</strong> <span class="ph">[PLACEHOLDER]</span> descreva o que o painel mostrou.</div>
-          <div class="p-actions">
-            <!-- TROCAR: link do dashboard publicado ou do repositório -->
-            <a class="btn btn-primary btn-sm" href="#">Ver dashboard</a>
-          </div>
+          <div class="insight"><strong>Insight (com dados fictícios):</strong> o Instagram lidera em volume de leads, enquanto e-mail e indicação saem mais baratos por lead. O painel mostra onde a verba rende mais.</div>
         </div>
       </article>
 
@@ -423,7 +440,7 @@ footer{padding:28px 0 40px;color:var(--muted);font-size:.85rem;text-align:center
             <li>Modelei os dados de clientes e status de pagamento</li>
             <li>Usei o painel no acompanhamento real das empresas clientes</li>
           </ul>
-          <div class="insight"><strong>Resultado/insight:</strong> <span class="ph">[PLACEHOLDER]</span> conte uma decisão que o painel ajudou a tomar (sem números inventados).</div>
+          <div class="insight"><strong>Resultado:</strong> o painel mostra de uma vez quantas empresas estão pagando e quantas estão pendentes, o que facilita saber quem precisa de contato.</div>
           <div class="p-actions">
             <!-- TROCAR: link para detalhes (case, post ou repositório) -->
             <a class="btn btn-primary btn-sm" href="#">Ver detalhes</a>
@@ -431,21 +448,39 @@ footer{padding:28px 0 40px;color:var(--muted);font-size:.85rem;text-align:center
         </div>
       </article>
 
-      <!-- c) OUTRO PROJETO (opcional) -->
-      <!-- TROCAR: copie um bloco <article> acima para este projeto, ou apague este card -->
+      <!-- c) ANÁLISE DE VENDAS (projeto de estudo, DADOS FICTÍCIOS). TROCAR por projeto real quando tiver -->
       <article class="project reveal">
         <div class="p-media">
-          <div style="text-align:center;color:var(--muted);border:1px dashed var(--border);border-radius:12px;padding:40px 20px;width:100%"><span class="ph">[PLACEHOLDER]</span><br>Imagem do próximo projeto de dados</div>
+          <div class="fake-seal"><span class="tag warn">Dados fictícios de exemplo</span></div>
+          <div class="mini-dash" style="margin-top:34px" role="img" aria-label="Painel de vendas com KPIs e receita mensal, com dados fictícios">
+            <div class="kpis">
+              <div class="kpi"><small>Receita</small><b class="up">R$ 186 mil</b></div>
+              <div class="kpi"><small>Pedidos</small><b>2.140</b></div>
+              <div class="kpi"><small>Ticket médio</small><b>R$ 86,92</b></div>
+            </div>
+            <div class="mini-chart">
+              <svg viewBox="0 0 320 110" aria-hidden="true">
+                <line class="grid-line" x1="0" x2="320" y1="30" y2="30"/><line class="grid-line" x1="0" x2="320" y1="65" y2="65"/><line class="grid-line" x1="0" x2="320" y1="100" y2="100"/>
+                <polyline points="26,70 76,62 126,66 176,48 226,40 276,28" fill="none" stroke="var(--accent)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+                <g fill="var(--bg)" stroke="var(--accent)" stroke-width="2.5"><circle cx="26" cy="70" r="4"/><circle cx="76" cy="62" r="4"/><circle cx="126" cy="66" r="4"/><circle cx="176" cy="48" r="4"/><circle cx="226" cy="40" r="4"/><circle cx="276" cy="28" r="4"/></g>
+                <g class="axis-text" text-anchor="middle"><text x="26" y="110">Jan</text><text x="76" y="110">Fev</text><text x="126" y="110">Mar</text><text x="176" y="110">Abr</text><text x="226" y="110">Mai</text><text x="276" y="110">Jun</text></g>
+              </svg>
+            </div>
+            <div class="status-row"><span>Por categoria</span><span>Por mês</span><span>Ticket médio</span></div>
+          </div>
         </div>
         <div class="p-body">
-          <div class="p-top"><span class="tag warn">Em breve / opcional</span></div>
-          <h3><span class="ph">[PLACEHOLDER]</span> Título do projeto</h3>
-          <p class="question"><strong>Pergunta de negócio:</strong> <span class="ph">[PLACEHOLDER]</span></p>
-          <div class="tools"><span>SQL</span><span>Python</span><span>Excel</span></div>
+          <div class="p-top"><span class="tag">SQL e Excel</span><span class="tag warn">Projeto de estudo</span></div>
+          <h3>Análise de vendas de uma loja</h3>
+          <p class="question"><strong>Pergunta de negócio:</strong> quais categorias e meses concentram a receita, e como o ticket médio evolui?</p>
+          <div class="tools"><span>SQL</span><span>Excel</span></div>
           <h4>O que fiz</h4>
-          <ul><li><span class="ph">[PLACEHOLDER]</span></li><li><span class="ph">[PLACEHOLDER]</span></li><li><span class="ph">[PLACEHOLDER]</span></li></ul>
-          <div class="insight"><strong>Resultado/insight:</strong> <span class="ph">[PLACEHOLDER]</span></div>
-          <div class="p-actions"><a class="btn btn-ghost btn-sm" href="#">Ver detalhes</a></div>
+          <ul>
+            <li>Escrevi consultas SQL com agregações e JOINs para receita por categoria e mês</li>
+            <li>Organizei os resultados em tabela dinâmica e gráficos no Excel</li>
+            <li>Defini os indicadores: receita, pedidos e ticket médio</li>
+          </ul>
+          <div class="insight"><strong>Insight (com dados fictícios):</strong> a receita cresce ao longo do semestre, puxada por poucas categorias, e o ticket médio fica estável.</div>
         </div>
       </article>
 
