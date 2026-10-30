@@ -167,6 +167,17 @@ header{position:fixed;inset:0 0 auto 0;z-index:100;background:color-mix(in srgb,
 .prod .shot{border:1px dashed var(--border);border-radius:12px;min-height:150px;display:grid;place-items:center;text-align:center;color:var(--muted);font-size:.85rem;padding:16px;background:var(--surface-2)}
 .prod .shot img{border-radius:10px}
 
+
+/* Previews clicáveis dos sites (janela de navegador) */
+.site-shot{display:block;position:relative;overflow:hidden;border:1px solid var(--border);border-radius:12px;background:var(--surface);transition:.25s}
+.site-shot:hover{border-color:var(--accent);box-shadow:var(--shadow);transform:translateY(-2px)}
+.site-shot .bar{display:flex;align-items:center;gap:6px;padding:8px 12px;background:var(--surface-2);border-bottom:1px solid var(--border)}
+.site-shot .bar i{width:9px;height:9px;border-radius:50%;background:var(--border)}
+.site-shot .bar em{font-style:normal;font-size:.72rem;color:var(--muted);margin-left:8px;background:var(--surface);padding:2px 12px;border-radius:99px;border:1px solid var(--border)}
+.site-shot img{width:100%;height:auto;display:block;transition:transform .5s ease}
+.site-shot:hover img{transform:scale(1.03)}
+.site-shot .open{position:absolute;right:12px;bottom:12px;background:var(--accent);color:var(--accent-ink);font-weight:600;font-size:.82rem;padding:8px 14px;border-radius:10px;box-shadow:0 6px 18px rgba(0,0,0,.3)}
+
 /* TIMELINE */
 .timeline{position:relative;margin-left:8px;padding-left:34px;border-left:2px solid var(--border);display:grid;gap:28px}
 .t-item{position:relative}
@@ -458,7 +469,7 @@ footer{padding:28px 0 40px;color:var(--muted);font-size:.85rem;text-align:center
           <div class="tools"><span>JavaScript</span><span>Node.js</span><span>Banco de dados</span><span>Apple/Google Wallet</span></div>
           <div class="p-actions"><a class="btn btn-primary btn-sm" href="https://www.fidelizarei.com.br" target="_blank" rel="noopener">Visitar fidelizarei.com.br</a></div>
         </div>
-        <a class="shot" href="https://www.fidelizarei.com.br" target="_blank" rel="noopener" aria-label="Abrir o site do Fidelizarei" style="padding:0;overflow:hidden;display:block"><img src="assets/fidelizarei-site.jpg" alt="Página inicial do site Fidelizarei, mostrando o cartão fidelidade na carteira do celular" loading="lazy" width="800" height="600" style="width:100%;height:auto"></a>
+        <a class="site-shot" href="https://www.fidelizarei.com.br" target="_blank" rel="noopener" aria-label="Abrir o site do Fidelizarei"><span class="bar" aria-hidden="true"><i></i><i></i><i></i><em>www.fidelizarei.com.br</em></span><img src="assets/fidelizarei-site.jpg" alt="Página inicial do site Fidelizarei, mostrando o cartão fidelidade na carteira do celular" loading="lazy" width="800" height="600"><span class="open">Abrir site &#8599;</span></a>
       </article>
 
       <article class="prod reveal">
@@ -466,7 +477,7 @@ footer{padding:28px 0 40px;color:var(--muted);font-size:.85rem;text-align:center
         <h3>Site da Partum</h3>
         <p>Desenvolvimento e manutenção do site institucional, mais domínio e DNS no Cloudflare e migração de e-mails para o Microsoft 365.</p>
         <div class="tools"><span>Cloudflare</span><span>DNS</span><span>Microsoft 365</span></div>
-        <a class="shot" href="https://www.partumbrasil.com.br/" target="_blank" rel="noopener" aria-label="Abrir o site da Partum Brasil" style="padding:0;overflow:hidden;display:block"><img src="assets/partum-site.jpg" alt="Página inicial do site da Partum Brasil, distribuidora de EPIs e fardamentos profissionais" loading="lazy" width="800" height="609" style="width:100%;height:auto"></a>
+        <a class="site-shot" href="https://www.partumbrasil.com.br/" target="_blank" rel="noopener" aria-label="Abrir o site da Partum Brasil"><span class="bar" aria-hidden="true"><i></i><i></i><i></i><em>www.partumbrasil.com.br</em></span><img src="assets/partum-site.jpg" alt="Página inicial do site da Partum Brasil, distribuidora de EPIs e fardamentos profissionais" loading="lazy" width="800" height="609"><span class="open">Abrir site &#8599;</span></a>
         <a class="btn btn-ghost btn-sm" href="https://www.partumbrasil.com.br/" target="_blank" rel="noopener" style="align-self:flex-start">Ver site</a>
       </article>
 
@@ -475,7 +486,7 @@ footer{padding:28px 0 40px;color:var(--muted);font-size:.85rem;text-align:center
         <h3>Site da Portugal Med</h3>
         <p>Site da loja de produtos médicos e hospitalares que desenvolvi.</p>
         <div class="tools"><span>Catálogo de produtos</span><span>Orçamento via WhatsApp</span></div>
-        <a class="shot" href="https://www.portugalmed.com.br/" target="_blank" rel="noopener" aria-label="Abrir o site da Portugal Med" style="padding:0;overflow:hidden;display:block"><img src="assets/portugalmed-site.jpg" alt="Página inicial do site da Portugal Med, loja de produtos ortopédicos e hospitalares" loading="lazy" width="800" height="609" style="width:100%;height:auto"></a>
+        <a class="site-shot" href="https://www.portugalmed.com.br/" target="_blank" rel="noopener" aria-label="Abrir o site da Portugal Med"><span class="bar" aria-hidden="true"><i></i><i></i><i></i><em>www.portugalmed.com.br</em></span><img src="assets/portugalmed-site.jpg" alt="Página inicial do site da Portugal Med, loja de produtos ortopédicos e hospitalares" loading="lazy" width="800" height="609"><span class="open">Abrir site &#8599;</span></a>
         <a class="btn btn-ghost btn-sm" href="https://www.portugalmed.com.br/" target="_blank" rel="noopener" style="align-self:flex-start">Ver site</a>
       </article>
     </div>
